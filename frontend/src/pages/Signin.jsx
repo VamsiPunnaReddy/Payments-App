@@ -20,8 +20,7 @@ export const Signin = () => {
       password
     })
 
-    console.log(res.status)
-    if (response.status >= 200 && response.status < 300) {
+    if (res.status >= 200 && res.status < 300) {
       alert('Signed in successfully');
       navigate('/')
     } else {

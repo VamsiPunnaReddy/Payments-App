@@ -22,7 +22,6 @@ userRouter.post('/signup', async (req, res) => {
     })
 
     const { fullName, username, email, password } = req.body
-    console.log(fullName, username, email, password)
 
     const { success } = signupBody.safeParse(req.body)
 
@@ -46,7 +45,7 @@ userRouter.post('/signup', async (req, res) => {
 
     await Account.create({
         userId,
-        balance: (Math.random() * 10000) + 1 
+        balance: (Math.random() * 10000) + 1
     })
 
     const token = jwt.sign({ userId }, jwtSecretKey)
@@ -105,10 +104,11 @@ userRouter.put("/", authMiddleware, async (req, res) => {
 })
 
 
-userRouter.get("/bulk", async (req, res) => {
+userRouter.get("/bulk", authMiddleware, async (req, res) => {
     const filter = req.query.filter || "";
 
     const users = await User.find({
+        _id: { $ne: req.userId },
         fullName: {
             "$regex": filter
         }

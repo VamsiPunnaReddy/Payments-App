@@ -31,7 +31,7 @@ export const Navbar = () => {
         <div className="py-4 px-4 sm:px-8 lg:px-12">
           <div className='flex justify-between'>
             <div className='flex items-center'>
-              <Link to='/'> <img src="" alt="Logo" className=" h-10" /> </Link>
+              <Link to='/' className="text-2xl font-bold py-1"> Payments App </Link>
             </div>
             <div className="flex md:hidden items-center">
               {menuOpen ? (
@@ -67,7 +67,7 @@ export const Navbar = () => {
           </div>
         </div>
       </nav >
-      <div className='pt-20'></div>
+      <div className='pt-14'></div>
       <Outlet />
     </>
   )

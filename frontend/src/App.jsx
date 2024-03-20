@@ -7,6 +7,8 @@ import { Signin } from './pages/Signin';
 import { Dashboad } from './pages/Dashboard';
 import { Profile } from './pages/Profile';
 import { RecoilRoot } from 'recoil'
+import { NoPage } from './pages/NoPage';
+import { SendMoney } from './components/SendMoney';
 
 
 
@@ -20,12 +22,14 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Navbar />} >
-              <Route index element={<Dashboad />} ></Route>
-              <Route path='/profile' element={<Profile />} ></Route>
-            </Route>
-            <Route path='/signup' element={<Signup />} ></Route>
-            <Route path='/signin' element={<Signin />} ></Route>
+              <Route index element={<Dashboad />} />
+              <Route path='/send' element={<SendMoney />} />
+              <Route path='/profile' element={<Profile />} />
 
+            </Route>
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/signin' element={<Signin />} />
+            <Route path='*' element={<NoPage />} />
           </Routes>
         </Router>
       </RecoilRoot>

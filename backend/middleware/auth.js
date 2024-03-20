@@ -5,7 +5,6 @@ const jwtSecretKey = process.env.JWT_SECRET_KEY
 
 export function authMiddleware(req, res, next) {
   const authHeader = req.headers.authorization;
-  console.log(authHeader)
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     res.status(403).json({})

@@ -17,6 +17,7 @@ accountRouter.post('/transfer', authMiddleware, async (req, res) => {
 
     session.startTransaction();
     const { amount, to } = req.body;
+    console.log(to, amount)
 
     // Fetch the accounts within the transaction
     const account = await Account.findOne({ userId: req.userId }).session(session);
