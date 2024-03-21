@@ -67,7 +67,7 @@ export const Navbar = () => {
           </div>
         </div>
       </nav >
-      <div className='pt-14'></div>
+      <div className='pt-[4.55rem]'></div>
       <Outlet />
     </>
   )

@@ -35,7 +35,7 @@ export const SendMoney = () => {
 
   return (
     <>
-      <div className="absolute top-0 w-screen h-[calc(100vh-5rem)] pt-12 bg-slate-200">
+      <div className="h-[calc(100vh-5rem)] pt-12 bg-slate-200">
 
         <div className="relative max-w-lg shadow-2xl rounded-2xl mx-auto  h-fit space-y-3 p-12 bg-white">
           <button onClick={HandleDialog} className="absolute right-2 top-2 text-black text-2xl font-semibold rounded-md tracking-wide h-fit py-2 px-3 hover:bg-white hover:ring-2 hover:ring-green-500 hover:text-black transition-colors"> X </button>

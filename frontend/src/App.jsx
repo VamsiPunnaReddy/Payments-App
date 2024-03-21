@@ -8,7 +8,7 @@ import { Dashboad } from './pages/Dashboard';
 import { Profile } from './pages/Profile';
 import { RecoilRoot } from 'recoil'
 import { NoPage } from './pages/NoPage';
-import { SendMoney } from './components/SendMoney';
+import { SendMoney } from './pages/SendMoney';
 
 
 

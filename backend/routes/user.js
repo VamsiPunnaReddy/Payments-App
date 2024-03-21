@@ -110,7 +110,8 @@ userRouter.get("/bulk", authMiddleware, async (req, res) => {
     const users = await User.find({
         _id: { $ne: req.userId },
         fullName: {
-            "$regex": filter
+            "$regex": filter,
+            "$options": "i"
         }
 
     })
@@ -122,4 +123,18 @@ userRouter.get("/bulk", authMiddleware, async (req, res) => {
             _id: user._id
         }))
     })
+})
+
+userRouter.get("/profile", authMiddleware, async (req, res) => {
+    try {
+        const user = await User.findById(req.userId);
+        if (!user) {
+            res.status(404).json({ message: "User not found" });
+            return;
+        }
+        res.json({ user: user });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
 })
