@@ -19,6 +19,6 @@ export const Balance = () => {
 
 
   return (
-    <h3 className="pt-6 text-3xl font-bold"> Your Balance Rs {balance.toFixed(2)} </h3>
+    <h3 className="pt-6 text-3xl font-bold"> Your Balance &#8377;{balance.toFixed(2)} </h3>
   )
 }

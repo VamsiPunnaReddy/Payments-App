@@ -20,8 +20,8 @@ export const Profile = () => {
       <div className="space-y-8 pt-8 px-20">
 
         <ProfileData userType={"Full Name:"} userData={user.fullName} />
-        <ProfileData userType={"Username:"} userData={user.fullName} />
-        <ProfileData userType={"Email:"} userData={user.fullName} />
+        <ProfileData userType={"Username:"} userData={user.username} />
+        <ProfileData userType={"Email:"} userData={user.email} />
         <ProfileData userType={"Password:"} userData={"********"} />
         <button className="bg-green-500 text-white font-semibold rounded-md tracking-wide h-fit py-2 px-3 hover:bg-white hover:ring-2 hover:ring-green-500 hover:text-black transition-colors "> Edit Details </button>
 

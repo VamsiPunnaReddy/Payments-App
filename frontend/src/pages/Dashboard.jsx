@@ -8,9 +8,9 @@ export const Dashboad = () => {
 
   const token = localStorage.getItem('token')
 
-  if (!token) {
-    return (
-      <>
+  return (
+    <>
+      {!token ? <>
         <div className="h-[calc(100vh-5rem)] flex flex-col gap-10 justify-center items-center ">
           <h1 className="text-5xl font-bold">You are not Signed in</h1>
           <div className="space-x-12">
@@ -20,20 +20,16 @@ export const Dashboad = () => {
 
         </div>
 
-      </>
-    )
-  }
-  else {
-    return (
-      <>
-        {console.log("dashboard")}
+      </> :
+
         <div className="relative container px-20 space-y-6 py-6">
           <Balance />
           <Users />
-        </div>
-      </>
-    )
-  }
+        </div>}
+
+    </>
+  )
+
 
 
 }
